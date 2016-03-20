@@ -39,6 +39,20 @@ namespace Application.Views
                         });
                     };
                     panel1.Items.Add(button1);
+                    var button2 = new RibbonButton()
+                    {
+                        Text = "Reservation",
+                        Image = global::Application.Properties.Resources.ImageUserAdd
+                    };
+                    button2.Click += (evt, src) =>
+                    {
+                        CenterArea.Controls.Clear();
+                        CenterArea.Controls.Add(new ReservationForm(businessLayer)
+                        {
+                            Dock = DockStyle.Fill
+                        });
+                    };
+                    panel1.Items.Add(button2);
                 }
             }
 

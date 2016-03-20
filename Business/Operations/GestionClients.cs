@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Entities;
+using System.Data.Entity;
 
 namespace Business.Operations
 {
@@ -35,6 +36,15 @@ namespace Business.Operations
             };
             businessLayer.Data.Clients.Add(client);
             businessLayer.Data.SaveChanges();
+        }
+
+        public IQueryable<string> ListeNomsClients()
+        {
+            
+            return (from c in businessLayer.Data.Clients
+                   select new {
+                       Name = c.Civilite.ToString() + " " + c.Prenom + " " + c.Nom.ToUpper() + " (" + c.Id + ")"
+                   }).Select(e => e.Name);
         }
 
         public IQueryable<object> ListeClientsResumée()
