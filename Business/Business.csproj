@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer.cs" />
+    <Compile Include="Entities\Civilite.cs" />
     <Compile Include="Entities\Facture.cs" />
     <Compile Include="Entities\Personne.cs" />
     <Compile Include="Entities\Permission.cs" />
@@ -61,6 +62,10 @@
     <Compile Include="Migrations\201603192314330_init.cs" />
     <Compile Include="Migrations\201603192314330_init.Designer.cs">
       <DependentUpon>201603192314330_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603200214379_1.cs" />
+    <Compile Include="Migrations\201603200214379_1.Designer.cs">
+      <DependentUpon>201603200214379_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Operations\GestionClients.cs" />
@@ -74,6 +79,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201603192314330_init.resx">
       <DependentUpon>201603192314330_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603200214379_1.resx">
+      <DependentUpon>201603200214379_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

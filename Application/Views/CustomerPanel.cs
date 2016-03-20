@@ -12,9 +12,11 @@ namespace Application.Views
 {
     public partial class CustomerPanel : UserControl
     {
-        public CustomerPanel()
+        public CustomerPanel(Business.BusinessLayer businessLayer)
         {
             InitializeComponent();
+
+            dataGridView1.DataSource = businessLayer.GestionClients.ListeClientsResumée().ToList();
         }
     }
 }

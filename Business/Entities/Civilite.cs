@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    public class Client : Personne
+    public enum Civilite
     {
-
-        public string NumeroCarteFidelite { get; set; }
-
-        public string Entreprise { get; set; }
-
+        Monsieur,
+        Madame,
+        Mademoiselle
     }
 }

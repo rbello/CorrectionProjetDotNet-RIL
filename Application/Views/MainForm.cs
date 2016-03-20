@@ -12,7 +12,6 @@ namespace Application.Views
 
             InfoLabel.Text = "Hello " + user.Login + " (" + user.GetUserType() + ")";
 
-
             var tab1 = new RibbonTab()
             {
                 Text = "Test"
@@ -34,7 +33,7 @@ namespace Application.Views
                     button1.Click += (evt, src) =>
                     {
                         CenterArea.Controls.Clear();
-                        CenterArea.Controls.Add(new CustomerPanel()
+                        CenterArea.Controls.Add(new CustomerPanel(businessLayer)
                         {
                             Dock = DockStyle.Fill
                         });
