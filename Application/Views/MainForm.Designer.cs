@@ -34,6 +34,7 @@ namespace Application.Views
             this.RibbonPanel = new System.Windows.Forms.Ribbon();
             this.BottomArea = new System.Windows.Forms.Panel();
             this.CenterArea = new System.Windows.Forms.Panel();
+            this.InfoLabel = new System.Windows.Forms.Label();
             this.TopArea.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,12 +75,18 @@ namespace Application.Views
             // 
             // BottomArea
             // 
-            this.BottomArea.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BottomArea.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BottomArea.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BottomArea.Location = new System.Drawing.Point(0, 579);
             this.BottomArea.Name = "BottomArea";
             this.BottomArea.Size = new System.Drawing.Size(1158, 21);
             this.BottomArea.TabIndex = 1;
+            // 
+            // InfoLabel
+            // 
+            this.InfoLabel.Text = "";
+            this.InfoLabel.Location = new System.Drawing.Point(5, 5);
+            this.BottomArea.Controls.Add(InfoLabel);
             // 
             // CenterArea
             // 
@@ -93,12 +100,13 @@ namespace Application.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.ClientSize = new System.Drawing.Size(1158, 600);
             this.Controls.Add(this.CenterArea);
             this.Controls.Add(this.BottomArea);
             this.Controls.Add(this.TopArea);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Gestion Hôtel";
             this.TopArea.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -110,5 +118,6 @@ namespace Application.Views
         private Panel BottomArea;
         private Panel CenterArea;
         private Ribbon RibbonPanel;
+        private Label InfoLabel;
     }
 }
