@@ -20,7 +20,6 @@ namespace Application.Views
 
             var list = new List<string>() { "" };
             list.AddRange(businessLayer.GestionClients.ListeNomsClients());
-            //comboBox1.DataSource = list;
 
             comboBox1.TextChanged += (src, evt) =>
             {

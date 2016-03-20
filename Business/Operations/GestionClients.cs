@@ -62,5 +62,27 @@ namespace Business.Operations
                                 select f).Count()
                          };
         }
+
+        public IQueryable<object> ListeClientsResumée(string match)
+        {
+            match = match.ToUpper();
+            return from c in businessLayer.Data.Clients
+                   where c.Prenom.ToUpper().Contains(match) || c.Nom.ToUpper().Contains(match)
+                         || c.Email.ToUpper().Contains(match) || c.TelFixe.ToUpper().Contains(match)
+                         || c.TelPortable.ToUpper().Contains(match) || c.AdresseVille.ToUpper().Contains(match)
+                         || c.AdresseCp.ToUpper().Contains(match) || c.AdressePays.ToUpper().Contains(match)
+                   select new
+                   {
+                       Nom = c.Civilite.ToString() + " " + c.Prenom + " " + c.Nom.ToUpper(),
+                       c.Email,
+                       c.TelPortable,
+                       c.TelFixe,
+                       Région = c.AdresseCp + " " + c.AdresseVille + " (" + c.AdressePays + ")",
+                       Réservations = (
+                          from f in businessLayer.Data.Factures
+                          where f.Client == c
+                          select f).Count()
+                   };
+        }
     }
 }
