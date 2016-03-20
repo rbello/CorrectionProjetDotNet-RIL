@@ -30,62 +30,85 @@ namespace Application.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
-            this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
-            this.buttonChooseCustomers = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
+            this.TopArea = new System.Windows.Forms.Panel();
+            this.RibbonPanel = new System.Windows.Forms.Ribbon();
+            this.BottomArea = new System.Windows.Forms.Panel();
+            this.CenterArea = new System.Windows.Forms.Panel();
+            this.TopArea.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ribbonTab1
+            // TopArea
             // 
-            this.ribbonTab1.Panels.Add(this.ribbonPanel1);
-            this.ribbonTab1.Tag = null;
-            this.ribbonTab1.Text = "Gestion";
+            this.TopArea.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.TopArea.Controls.Add(this.RibbonPanel);
+            this.TopArea.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopArea.Location = new System.Drawing.Point(0, 0);
+            this.TopArea.Name = "TopArea";
+            this.TopArea.Size = new System.Drawing.Size(1158, 139);
+            this.TopArea.TabIndex = 0;
             // 
-            // ribbonPanel1
+            // RibbonPanel
             // 
-            this.ribbonPanel1.Items.Add(this.buttonChooseCustomers);
-            this.ribbonPanel1.Tag = null;
-            this.ribbonPanel1.Text = "Vues ";
+            this.RibbonPanel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.RibbonPanel.Location = new System.Drawing.Point(0, 0);
+            this.RibbonPanel.Minimized = false;
+            this.RibbonPanel.Name = "RibbonPanel";
             // 
-            // buttonChooseCustomers
             // 
-            this.buttonChooseCustomers.AltKey = null;
-            this.buttonChooseCustomers.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.buttonChooseCustomers.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.buttonChooseCustomers.Image = ((System.Drawing.Image)(resources.GetObject("buttonChooseCustomers.Image")));
-            this.buttonChooseCustomers.SmallImage = ((System.Drawing.Image)(resources.GetObject("buttonChooseCustomers.SmallImage")));
-            this.buttonChooseCustomers.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.buttonChooseCustomers.Tag = null;
-            this.buttonChooseCustomers.Text = "Clients";
-            this.buttonChooseCustomers.ToolTip = null;
-            this.buttonChooseCustomers.ToolTipImage = null;
-            this.buttonChooseCustomers.ToolTipTitle = null;
             // 
-            // ribbonTab2
+            this.RibbonPanel.OrbDropDown.BorderRoundness = 8;
+            this.RibbonPanel.OrbDropDown.Location = new System.Drawing.Point(0, 0);
+            this.RibbonPanel.OrbDropDown.Name = "";
+            this.RibbonPanel.OrbDropDown.Size = new System.Drawing.Size(527, 447);
+            this.RibbonPanel.OrbDropDown.TabIndex = 0;
+            this.RibbonPanel.OrbImage = null;
             // 
-            this.ribbonTab2.Tag = null;
-            this.ribbonTab2.Text = "Edition";
+            // 
+            // 
+            this.RibbonPanel.QuickAcessToolbar.Image = null;
+            this.RibbonPanel.QuickAcessToolbar.Tag = null;
+            this.RibbonPanel.QuickAcessToolbar.ToolTipImage = null;
+            this.RibbonPanel.Size = new System.Drawing.Size(1158, 138);
+            this.RibbonPanel.TabIndex = 0;
+            this.RibbonPanel.TabSpacing = 6;
+            // 
+            // BottomArea
+            // 
+            this.BottomArea.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BottomArea.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BottomArea.Location = new System.Drawing.Point(0, 579);
+            this.BottomArea.Name = "BottomArea";
+            this.BottomArea.Size = new System.Drawing.Size(1158, 21);
+            this.BottomArea.TabIndex = 1;
+            // 
+            // CenterArea
+            // 
+            this.CenterArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CenterArea.Location = new System.Drawing.Point(0, 120);
+            this.CenterArea.Name = "CenterArea";
+            this.CenterArea.Size = new System.Drawing.Size(1158, 459);
+            this.CenterArea.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 600);
+            this.Controls.Add(this.CenterArea);
+            this.Controls.Add(this.BottomArea);
+            this.Controls.Add(this.TopArea);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.TopArea.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Ribbon panel1;
-        private System.Windows.Forms.RibbonTab ribbonTab1;
-        private System.Windows.Forms.RibbonPanel ribbonPanel1;
-        private System.Windows.Forms.RibbonTab ribbonTab2;
-        private System.Windows.Forms.RibbonButton buttonChooseCustomers;
-        private Panel panel2;
+        private Panel TopArea;
+        private Panel BottomArea;
+        private Panel CenterArea;
+        private Ribbon RibbonPanel;
     }
 }

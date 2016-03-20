@@ -11,9 +11,9 @@ namespace Application.Views
             InitializeComponent();
 
             //UserLabel.Text = "Hello " + user.Login + " (" + user.GetUserType() + ")";
-            buttonChooseCustomers.Click += (evt, target) => {
+           /* buttonChooseCustomers.Click += (evt, target) => {
 
-            };
+            };*/
 
         }
     }
