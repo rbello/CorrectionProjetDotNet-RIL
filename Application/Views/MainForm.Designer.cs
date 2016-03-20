@@ -86,6 +86,8 @@ namespace Application.Views
             // 
             this.InfoLabel.Text = "";
             this.InfoLabel.Location = new System.Drawing.Point(5, 5);
+            this.InfoLabel.Size = new System.Drawing.Size(500, 14);
+            this.InfoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BottomArea.Controls.Add(InfoLabel);
             // 
             // CenterArea
