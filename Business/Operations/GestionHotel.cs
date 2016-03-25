@@ -31,5 +31,26 @@ namespace Business.Operations
             businessLayer.Data.SaveChanges();
             return opt;
         }
+
+        public IQueryable<Chambre> GetChambresDisponibles(bool dispo)
+        {
+            return (from c in businessLayer.Data.Chambres
+                    where c.Disponible == dispo
+                    select c);
+        }
+
+        public IQueryable<Chambre> GetChambresDisponibles(bool dispo, params OptionChambre[] options)
+        {
+            return (from c in businessLayer.Data.Chambres
+                    where c.Disponible == dispo // les chambres disponibles
+                    && !options.Except(c.Options).Any() // qui ont les options demandées
+                    select c);
+        }
+
+        public IQueryable<OptionChambre> GetOptions()
+        {
+            return businessLayer.Data.OptionsChambre;
+        }
+
     }
 }

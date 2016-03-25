@@ -24,6 +24,26 @@ namespace Business.Operations
             return facture;
         }
 
+        public IQueryable<Facture> GetFacturesByClient(Client client)
+        {
+            return (from f in businessLayer.Data.Factures where f.Client == client select f);
+        }
+
+        public Facture GetFactureById(int id)
+        {
+            return (from f in businessLayer.Data.Factures where f.Id == id select f).FirstOrDefault();
+        }
+
+        public IQueryable<Reservation> GetReservationsByFacture(Facture facture)
+        {
+            return (from r in businessLayer.Data.Reservations where r.Facture == facture select r);
+        }
+
+        public IQueryable<Reservation> GetReservationsByFacture(int id)
+        {
+            return (from r in businessLayer.Data.Reservations where r.Facture.Id == id select r);
+        }
+
         public Reservation AjouterReservation(Facture facture, Reservation resa)
         {
             // On associe la facture
@@ -35,5 +55,6 @@ namespace Business.Operations
             businessLayer.Data.SaveChanges();
             return resa;
         }
+
     }
 }

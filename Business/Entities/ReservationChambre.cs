@@ -24,6 +24,10 @@ namespace Business.Entities
             {
                 throw new Exception("Le nombre de personnes dépasse la capacité de la chambre");
             }
+            if (DateFin - DateDebut < new TimeSpan(12, 0, 0))
+            {
+                throw new Exception("La période de réservation doit être d'au moins 12 heures");
+            }
         }
 
     }

@@ -29,10 +29,28 @@ namespace Business.Entities
             {
                 throw new Exception("La date de fin est antérieure à la date de début");
             }
-            if (DateFin - DateDebut < new TimeSpan(4, 0, 0))
+        }
+
+        //public abstract double Tarif { get; }
+
+        public Periode Periode
+        {
+            get
             {
-                throw new Exception("La période de réservation doit être d'au moins 4 heures");
+                return new Periode()
+                {
+                    DateDebut = DateDebut,
+                    DateFin = DateFin
+                };
             }
         }
+
     }
+
+    public class Periode
+    {
+        public DateTime DateDebut;
+        public DateTime DateFin;
+    }
+
 }
