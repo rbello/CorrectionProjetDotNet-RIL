@@ -19,6 +19,7 @@ namespace Business.Operations
 
         public Facture OuvrirFacture(Facture facture)
         {
+            facture.NumeroFacture = Guid.NewGuid().ToString().ToUpper();
             businessLayer.Data.Factures.Add(facture);
             businessLayer.Data.SaveChanges();
             return facture;

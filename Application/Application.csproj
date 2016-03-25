@@ -184,6 +184,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Lib\System.Windows.Forms.Ribbon\WinApi.cs" />
+    <Compile Include="Views\ClientEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ClientEditor.Designer.cs">
+      <DependentUpon>ClientEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,11 +204,11 @@
     <Compile Include="Views\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\CustomerPanel.cs">
+    <Compile Include="Views\ClientList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\CustomerPanel.Designer.cs">
-      <DependentUpon>CustomerPanel.cs</DependentUpon>
+    <Compile Include="Views\ClientList.Designer.cs">
+      <DependentUpon>ClientList.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ReservationForm.cs">
       <SubType>UserControl</SubType>
@@ -216,8 +222,11 @@
     <Compile Include="Views\Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\CustomerPanel.resx">
-      <DependentUpon>CustomerPanel.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ClientEditor.resx">
+      <DependentUpon>ClientEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ClientList.resx">
+      <DependentUpon>ClientList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

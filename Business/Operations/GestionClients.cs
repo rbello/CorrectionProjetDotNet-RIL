@@ -38,7 +38,11 @@ namespace Business.Operations
 
         public Client AjouterClient(Client client)
         {
-            businessLayer.Data.Clients.Add(client);
+            if (client.Id == 0)
+            {
+                client.NumeroCarteFidelite = Guid.NewGuid().ToString().ToUpper();
+                businessLayer.Data.Clients.Add(client);
+            }
             businessLayer.Data.SaveChanges();
             return client;
         }
@@ -52,10 +56,16 @@ namespace Business.Operations
                    }).Select(e => e.Name);
         }
 
+        public Client GetClientById(int id)
+        {
+            return (from c in businessLayer.Data.Clients where c.Id == id select c).FirstOrDefault();
+        }
+
         public IQueryable<object> ListeClientsResumée()
         {
             return from c in businessLayer.Data.Clients
                          select new {
+                             Id = c.Id,
                              Nom = c.Civilite.ToString() + " " + c.Prenom + " " + c.Nom.ToUpper(),
                              c.Email,
                              c.TelPortable,
@@ -64,7 +74,8 @@ namespace Business.Operations
                              Réservations = (
                                 from f in businessLayer.Data.Factures
                                 where f.Client == c
-                                select f).Count()
+                                select f).Count(),
+                             Entreprise = c.Entreprise
                          };
         }
 
@@ -78,6 +89,7 @@ namespace Business.Operations
                          || c.AdresseCp.ToUpper().Contains(match) || c.AdressePays.ToUpper().Contains(match)
                    select new
                    {
+                       Id = c.Id,
                        Nom = c.Civilite.ToString() + " " + c.Prenom + " " + c.Nom.ToUpper(),
                        c.Email,
                        c.TelPortable,
@@ -86,7 +98,8 @@ namespace Business.Operations
                        Réservations = (
                           from f in businessLayer.Data.Factures
                           where f.Client == c
-                          select f).Count()
+                          select f).Count(),
+                       Entreprise = c.Entreprise
                    };
         }
 

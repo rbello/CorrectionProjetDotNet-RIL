@@ -32,8 +32,7 @@ namespace Application.Views
                     };
                     button1.Click += (evt, src) =>
                     {
-                        CenterArea.Controls.Clear();
-                        CenterArea.Controls.Add(new CustomerPanel(businessLayer)
+                        ChangeView(new ClientList(businessLayer)
                         {
                             Dock = DockStyle.Fill
                         });
@@ -46,8 +45,7 @@ namespace Application.Views
                     };
                     button2.Click += (evt, src) =>
                     {
-                        CenterArea.Controls.Clear();
-                        CenterArea.Controls.Add(new ReservationForm(businessLayer)
+                        ChangeView(new ReservationForm(businessLayer)
                         {
                             Dock = DockStyle.Fill
                         });
@@ -56,6 +54,13 @@ namespace Application.Views
                 }
             }
 
+        }
+
+        public void ChangeView(Control ctrl)
+        {
+            ctrl.Dock = DockStyle.Fill;
+            CenterArea.Controls.Clear();
+            CenterArea.Controls.Add(ctrl);
         }
     }
 }

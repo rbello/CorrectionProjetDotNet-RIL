@@ -1,6 +1,6 @@
 ﻿namespace Application.Views
 {
-    partial class CustomerPanel
+    partial class ClientList
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -57,7 +57,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(69, 24);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Rechercher";
+            this.button1.Text = "Ajouter";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
@@ -71,14 +71,14 @@
             this.dataGridView1.Size = new System.Drawing.Size(680, 362);
             this.dataGridView1.TabIndex = 3;
             // 
-            // CustomerPanel
+            // ClientList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Name = "CustomerPanel";
+            this.Name = "ClientList";
             this.Size = new System.Drawing.Size(686, 398);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
