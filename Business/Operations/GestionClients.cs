@@ -17,9 +17,9 @@ namespace Business.Operations
             this.businessLayer = businessLayer;
         }
 
-        public void AjouterClient(Civilite civilite, string prenom, string nom, string email, string telPortable, string telFixe, string pays, string ville, string codePostal, string addr1, string addr2 = "", string entreprise = "")
+        public Client AjouterClient(Civilite civilite, string prenom, string nom, string email, string telPortable, string telFixe, string pays, string ville, string codePostal, string addr1, string addr2 = "", string entreprise = "")
         {
-            var client = new Entities.Client()
+            return AjouterClient(new Entities.Client()
             {
                 Civilite = civilite,
                 Nom = nom,
@@ -33,9 +33,14 @@ namespace Business.Operations
                 Adresse1 = addr1,
                 Adresse2 = addr2,
                 Entreprise = entreprise
-            };
+            });
+        }
+
+        public Client AjouterClient(Client client)
+        {
             businessLayer.Data.Clients.Add(client);
             businessLayer.Data.SaveChanges();
+            return client;
         }
 
         public IQueryable<string> ListeNomsClients()

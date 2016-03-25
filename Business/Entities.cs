@@ -27,7 +27,19 @@
         public virtual DbSet<Personne> Personnes { get; set; }
         public virtual DbSet<Utilisateur> Utilisateurs { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
+
         public virtual DbSet<Facture> Factures { get; set; }
+
+        public virtual DbSet<OptionChambre> OptionsChambre { get; set; }
+        public virtual DbSet<Chambre> Chambres { get; set; }
+
+        public virtual DbSet<Reservation> Reservations { get; set; }
+        public virtual DbSet<ReservationTennis> ReservationsTennis { get; set; }
+        public virtual DbSet<ReservationRepas> ReservationsRepas { get; set; }
+        public virtual DbSet<ReservationFitness> ReservationsFitness { get; set; }
+        public virtual DbSet<ReservationChambre> ReservationsChambre { get; set; }
+
+        
     }
 
 }

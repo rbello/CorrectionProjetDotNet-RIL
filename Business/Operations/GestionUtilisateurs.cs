@@ -20,6 +20,8 @@ namespace Business.Operations
         {
             var user = new Entities.Utilisateur()
             {
+                Nom = login.ToUpper(),
+                Prenom = login,
                 Login = login,
                 Password = EncodeSha1(login + ":" + password),
                 Permissions = perm

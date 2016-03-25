@@ -52,11 +52,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer.cs" />
+    <Compile Include="Entities\Chambre.cs" />
     <Compile Include="Entities\Civilite.cs" />
     <Compile Include="Entities\Facture.cs" />
+    <Compile Include="Entities\OptionChambre.cs" />
     <Compile Include="Entities\Personne.cs" />
     <Compile Include="Entities\Permission.cs" />
     <Compile Include="Entities\Client.cs" />
+    <Compile Include="Entities\Reservation.cs" />
+    <Compile Include="Entities\ReservationChambre.cs" />
+    <Compile Include="Entities\ReservationFitness.cs" />
+    <Compile Include="Entities\ReservationRepas.cs" />
+    <Compile Include="Entities\ReservationTennis.cs" />
+    <Compile Include="Entities\TypeRepas.cs" />
     <Compile Include="Entities\Utilisateur.cs" />
     <Compile Include="Entities.cs" />
     <Compile Include="Migrations\201603192314330_init.cs" />
@@ -67,7 +75,13 @@
     <Compile Include="Migrations\201603200214379_1.Designer.cs">
       <DependentUpon>201603200214379_1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201603251900297_2.cs" />
+    <Compile Include="Migrations\201603251900297_2.Designer.cs">
+      <DependentUpon>201603251900297_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Operations\GestionReservations.cs" />
+    <Compile Include="Operations\GestionHotel.cs" />
     <Compile Include="Operations\GestionClients.cs" />
     <Compile Include="Operations\GestionUtilisateurs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201603200214379_1.resx">
       <DependentUpon>201603200214379_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603251900297_2.resx">
+      <DependentUpon>201603251900297_2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

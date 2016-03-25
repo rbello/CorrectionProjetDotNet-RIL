@@ -13,5 +13,7 @@ namespace Business.Entities
 
         public string Entreprise { get; set; }
 
+        public virtual List<Facture> Factures { get; set; }
+
     }
 }

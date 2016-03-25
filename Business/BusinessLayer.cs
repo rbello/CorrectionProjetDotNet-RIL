@@ -19,6 +19,8 @@ namespace Business
             Data = context;
             GestionUtilisateurs = new Operations.GestionUtilisateurs(this);
             GestionClients = new Operations.GestionClients(this);
+            GestionHotel = new Operations.GestionHotel(this);
+            GestionReservations = new Operations.GestionReservations(this);
         }
 
         public Entities.Entities Data { get; private set; }
@@ -26,5 +28,9 @@ namespace Business
         public Operations.GestionUtilisateurs GestionUtilisateurs { get; private set; }
 
         public Operations.GestionClients GestionClients { get; private set; }
+
+        public Operations.GestionHotel GestionHotel { get; private set; }
+
+        public Operations.GestionReservations GestionReservations { get; private set; }
     }
 }

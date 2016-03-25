@@ -14,5 +14,7 @@ namespace Business.Entities
 
         public virtual Client Client { get; set; }
 
+        public virtual List<Reservation> Reservations { get; set; }
+
     }
 }
