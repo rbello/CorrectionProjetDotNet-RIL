@@ -42,7 +42,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(3, 7);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(605, 20);
+            this.textBox1.Size = new System.Drawing.Size(586, 20);
             this.textBox1.TabIndex = 0;
             // 
             // contextMenuStrip1
@@ -53,9 +53,12 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(614, 4);
+            this.button1.BackgroundImage = global::Application.Properties.Resources.ImageAdd12;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(595, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 24);
+            this.button1.Size = new System.Drawing.Size(88, 24);
             this.button1.TabIndex = 2;
             this.button1.Text = "Ajouter";
             this.button1.UseVisualStyleBackColor = true;

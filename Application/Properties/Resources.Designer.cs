@@ -63,6 +63,76 @@ namespace Application.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImageAdd {
+            get {
+                object obj = ResourceManager.GetObject("ImageAdd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImageAdd12 {
+            get {
+                object obj = ResourceManager.GetObject("ImageAdd12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImageAdd32 {
+            get {
+                object obj = ResourceManager.GetObject("ImageAdd32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImageAgenda {
+            get {
+                object obj = ResourceManager.GetObject("ImageAgenda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImageAgenda32 {
+            get {
+                object obj = ResourceManager.GetObject("ImageAgenda32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImageCustomers {
+            get {
+                object obj = ResourceManager.GetObject("ImageCustomers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImageCustomers32 {
+            get {
+                object obj = ResourceManager.GetObject("ImageCustomers32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ImageHotelIcon {
             get {
                 object obj = ResourceManager.GetObject("ImageHotelIcon", resourceCulture);
@@ -76,6 +146,16 @@ namespace Application.Properties {
         internal static System.Drawing.Bitmap ImageUserAdd {
             get {
                 object obj = ResourceManager.GetObject("ImageUserAdd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImageUserAdd32 {
+            get {
+                object obj = ResourceManager.GetObject("ImageUserAdd32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

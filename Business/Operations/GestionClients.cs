@@ -38,9 +38,11 @@ namespace Business.Operations
 
         public Client AjouterClient(Client client)
         {
+            // Création
             if (client.Id == 0)
             {
                 client.NumeroCarteFidelite = Guid.NewGuid().ToString().ToUpper();
+                client.Deleted = false;
                 businessLayer.Data.Clients.Add(client);
             }
             businessLayer.Data.SaveChanges();
@@ -64,7 +66,8 @@ namespace Business.Operations
         public IQueryable<object> ListeClientsResumée()
         {
             return from c in businessLayer.Data.Clients
-                         select new {
+                        where c.Deleted == false
+                        select new {
                              Id = c.Id,
                              Nom = c.Civilite.ToString() + " " + c.Prenom + " " + c.Nom.ToUpper(),
                              c.Email,
@@ -83,10 +86,12 @@ namespace Business.Operations
         {
             match = match.ToUpper();
             return from c in businessLayer.Data.Clients
-                   where c.Prenom.ToUpper().Contains(match) || c.Nom.ToUpper().Contains(match)
+                   where c.Deleted == false
+                   && (c.Prenom.ToUpper().Contains(match) || c.Nom.ToUpper().Contains(match)
                          || c.Email.ToUpper().Contains(match) || c.TelFixe.ToUpper().Contains(match)
                          || c.TelPortable.ToUpper().Contains(match) || c.AdresseVille.ToUpper().Contains(match)
                          || c.AdresseCp.ToUpper().Contains(match) || c.AdressePays.ToUpper().Contains(match)
+                         || c.Entreprise.ToUpper().Contains(match))
                    select new
                    {
                        Id = c.Id,
@@ -101,6 +106,22 @@ namespace Business.Operations
                           select f).Count(),
                        Entreprise = c.Entreprise
                    };
+        }
+
+        public bool SupprimerClient(int id)
+        {
+            try
+            {
+                var customer = new Client() { Id = id };
+                businessLayer.Data.Clients.Attach(customer);
+                customer.Deleted = true;
+                businessLayer.Data.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
     }

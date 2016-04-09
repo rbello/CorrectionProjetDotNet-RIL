@@ -27,30 +27,36 @@ namespace Application.Views
                 {
                     var button1 = new RibbonButton()
                     {
-                        Text = "Clients",
-                        Image = global::Application.Properties.Resources.ImageUserAdd
+                        Text = "Réservations",
+                        Image = global::Application.Properties.Resources.ImageAgenda32
                     };
                     button1.Click += (evt, src) =>
                     {
-                        ChangeView(new ClientList(businessLayer)
-                        {
-                            Dock = DockStyle.Fill
-                        });
+                        ChangeView(new PlanningForm(businessLayer));
                     };
                     panel1.Items.Add(button1);
+
                     var button2 = new RibbonButton()
                     {
-                        Text = "Reservation",
-                        Image = global::Application.Properties.Resources.ImageUserAdd
+                        Text = "Clients",
+                        Image = global::Application.Properties.Resources.ImageCustomers32
                     };
                     button2.Click += (evt, src) =>
                     {
-                        ChangeView(new ReservationForm(businessLayer)
-                        {
-                            Dock = DockStyle.Fill
-                        });
+                        ChangeView(new ClientList(businessLayer));
                     };
                     panel1.Items.Add(button2);
+
+                    var button3 = new RibbonButton()
+                    {
+                        Text = "Nouvelle Reservation",
+                        Image = global::Application.Properties.Resources.ImageAdd32
+                    };
+                    button3.Click += (evt, src) =>
+                    {
+                        ChangeView(new ReservationForm(businessLayer));
+                    };
+                    panel1.Items.Add(button3);
                 }
             }
 

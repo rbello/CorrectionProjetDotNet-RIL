@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Application</RootNamespace>
     <AssemblyName>Application</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -210,6 +211,12 @@
     <Compile Include="Views\ClientList.Designer.cs">
       <DependentUpon>ClientList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\PlanningForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PlanningForm.Designer.cs">
+      <DependentUpon>PlanningForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ReservationForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -244,6 +251,9 @@
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\PlanningForm.resx">
+      <DependentUpon>PlanningForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ReservationForm.resx">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,7 +283,15 @@
   <ItemGroup>
     <Content Include="Lib\System.Windows.Forms.Ribbon\System.Windows.Forms.Ribbon.csproj" />
     <Content Include="Lib\System.Windows.Forms.Ribbon\System.Windows.Forms.Ribbon.csproj.user" />
+    <Content Include="Resources\ImageAdd12.png" />
+    <Content Include="Resources\ImageAgenda.png" />
+    <Content Include="Resources\ImageAgenda32.png" />
+    <Content Include="Resources\ImageCustomers.png" />
+    <Content Include="Resources\ImageCustomers32.png" />
     <Content Include="Resources\ImageUserAdd.png" />
+    <Content Include="Resources\ImageUserAdd32.png" />
+    <Content Include="Resources\ImageAdd.png" />
+    <Content Include="Resources\ImageAdd32.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\ImageWarning.png">

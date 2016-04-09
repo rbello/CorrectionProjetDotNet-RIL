@@ -15,5 +15,11 @@ namespace Business.Entities
 
         public virtual List<Facture> Factures { get; set; }
 
+        //public bool Inactif { get; set; }
+
+        //public bool Prospect { get; set; }
+
+        //public bool CanalAcces { get; set; }
+
     }
 }

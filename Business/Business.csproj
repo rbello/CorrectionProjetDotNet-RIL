@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Business</RootNamespace>
     <AssemblyName>Business</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -79,6 +80,10 @@
     <Compile Include="Migrations\201603251900297_2.Designer.cs">
       <DependentUpon>201603251900297_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604071913069_3.cs" />
+    <Compile Include="Migrations\201604071913069_3.Designer.cs">
+      <DependentUpon>201604071913069_3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Operations\GestionReservations.cs" />
     <Compile Include="Operations\GestionHotel.cs" />
@@ -99,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201603251900297_2.resx">
       <DependentUpon>201603251900297_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604071913069_3.resx">
+      <DependentUpon>201604071913069_3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

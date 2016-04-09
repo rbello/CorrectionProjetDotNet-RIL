@@ -10,6 +10,8 @@ namespace Business.Entities
     {
         public int Id { get; set; }
 
+        public bool Deleted { get; set; }
+
         public Civilite Civilite { get; set; }
 
         public string Nom { get; set; }
