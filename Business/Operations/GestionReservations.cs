@@ -57,5 +57,12 @@ namespace Business.Operations
             return resa;
         }
 
+
+        public ReservationChambre GetReservation(Chambre room, DateTime dateTime)
+        {
+            return (from r in businessLayer.Data.Reservations.OfType<ReservationChambre>()
+                    where r.Chambre.Id == room.Id && dateTime >= r.DateDebut && dateTime <= r.DateFin
+                    select r).FirstOrDefault();
+        }
     }
 }
