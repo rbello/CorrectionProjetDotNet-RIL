@@ -64,5 +64,22 @@ namespace Business.Operations
                     where r.Chambre.Id == room.Id && dateTime >= r.DateDebut && dateTime <= r.DateFin
                     select r).FirstOrDefault();
         }
+
+        public List<ReservationChambre> GetReservations(DateTime dateTime)
+        {
+            return (from r in businessLayer.Data.Reservations.OfType<ReservationChambre>()
+                    where dateTime >= r.DateDebut && dateTime <= r.DateFin
+                    select r).ToList();
+        }
+
+        public Dictionary<Chambre, List<ReservationChambre>> GetReservations(DateTime begin, DateTime end)
+        {
+            return (from r in businessLayer.Data.Reservations.OfType<ReservationChambre>()
+                    where begin >= r.DateDebut && end <= r.DateFin
+                    select r)
+                    .GroupBy(r => r.Chambre)
+                    .ToDictionary(g => g.Key, g => g.ToList());
+        }
+
     }
 }
