@@ -18,7 +18,6 @@ namespace Application
         [STAThread]
         static void Main()
         {
-
             var debug = true;
             var b = new BusinessLayer();
             System.Windows.Forms.Application.EnableVisualStyles();
